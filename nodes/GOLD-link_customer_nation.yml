@@ -1,0 +1,137 @@
+fileVersion: 1
+id: b335b25b-903d-4ea9-a910-d8962120d94a
+name: link_customer_nation
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: GOLD
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18f265d9-b49b-4441-8449-73f2a86ce026
+          stepCounter: b335b25b-903d-4ea9-a910-d8962120d94a
+        config:
+          is_Link_hk: true
+        dataType: STRING
+        description: ""
+        name: l_customer_nation_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2620ac6-e2d5-4c0b-885b-b001b72c213d
+                stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a82a0753-fcaf-474e-88d2-6bb944820eb1
+          stepCounter: b335b25b-903d-4ea9-a910-d8962120d94a
+        config: {}
+        dataType: STRING
+        description: ""
+        name: h_customer_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 245f0181-ef15-4f98-83f1-b49bdac6bd71
+                stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 702447c0-8185-4252-88e1-7b78f931bc74
+          stepCounter: b335b25b-903d-4ea9-a910-d8962120d94a
+        config: {}
+        dataType: STRING
+        description: ""
+        name: h_nation_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e9915101-8458-4149-b4a2-511930ae1170
+                stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1cadb66e-4d8b-41f6-b977-bc99bf5d443e
+          stepCounter: b335b25b-903d-4ea9-a910-d8962120d94a
+        config: {}
+        dataType: LONG
+        description: ""
+        name: c_custkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4234b1fe-de80-4af0-b03b-248379c8d9b8
+                stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ab2c785e-5b84-4e03-9819-ff97dfb39c26
+          stepCounter: b335b25b-903d-4ea9-a910-d8962120d94a
+        config: {}
+        dataType: LONG
+        description: ""
+        name: c_nationkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ce8bb97-f80c-4c21-926c-45d71bd0f51a
+                stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8066c88a-2053-4549-916e-03b1faf8638d
+          stepCounter: b335b25b-903d-4ea9-a910-d8962120d94a
+        config: {}
+        dataType: TIMESTAMP
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        name: ldts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c03622a7-e311-40a2-ad0a-d058b2ef69d9
+                stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bf12894d-5607-4904-85ea-d02377396c61
+          stepCounter: b335b25b-903d-4ea9-a910-d8962120d94a
+        config: {}
+        dataType: STRING
+        description: The Record Source (RSRC) describes the source of this data.
+        name: rsrc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9afb29e4-47d1-4680-99d4-5b47cd51f12d
+                stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: dvstg_customer
+        join:
+          joinCondition: FROM {{ ref('SILVER', 'dvstg_customer') }} `dvstg_customer`
+        name: link_customer_nation
+        noLinkRefs: []
+  name: link_customer_nation
+  overrideSQL: false
+  schema: ""
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

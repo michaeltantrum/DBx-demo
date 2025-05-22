@@ -1,0 +1,95 @@
+fileVersion: 1
+id: 87d60cca-2367-4f72-b936-f8dba1bbd36e
+name: hub_supplier
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: GOLD
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 25fdf955-d796-4919-814f-5cbf80e5f034
+          stepCounter: 87d60cca-2367-4f72-b936-f8dba1bbd36e
+        config:
+          is_Hub_hk: true
+        dataType: STRING
+        description: ""
+        name: h_supplier_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d9bbf13e-5fa1-4695-85d4-6757de83bcb0
+                stepCounter: 5417216d-7bec-41f6-8edb-511c3055d54a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f46a186-5d74-4acb-b082-655076cf14a8
+          stepCounter: 87d60cca-2367-4f72-b936-f8dba1bbd36e
+        config: {}
+        dataType: LONG
+        description: ""
+        name: s_suppkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c04de17e-dba9-44fd-81a2-db37fd6f272b
+                stepCounter: 5417216d-7bec-41f6-8edb-511c3055d54a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 76f1982b-760f-4984-a13b-7f14765c3850
+          stepCounter: 87d60cca-2367-4f72-b936-f8dba1bbd36e
+        config: {}
+        dataType: STRING
+        description: The Record Source (RSRC) describes the source of this data.
+        name: rsrc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f6c75493-b8db-4f72-ac15-dea924f6e944
+                stepCounter: 5417216d-7bec-41f6-8edb-511c3055d54a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f6ff2c6-6343-4c43-b3a8-53474c2471c7
+          stepCounter: 87d60cca-2367-4f72-b936-f8dba1bbd36e
+        config: {}
+        dataType: TIMESTAMP
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        name: ldts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30514986-9904-4087-ab2c-e1d4a63f765a
+                stepCounter: 5417216d-7bec-41f6-8edb-511c3055d54a
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: dvstg_supplier
+        join:
+          joinCondition: FROM {{ ref('SILVER', 'dvstg_supplier') }} `dvstg_supplier`
+        name: hub_supplier
+        noLinkRefs: []
+  name: hub_supplier
+  overrideSQL: false
+  schema: ""
+  sqlType: "6"
+  type: sql
+  version: 1
+type: Node

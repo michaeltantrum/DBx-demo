@@ -1,0 +1,122 @@
+fileVersion: 1
+id: c00040c0-69f9-470a-990e-c9d03c6f9ffc
+name: hub_order
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: true
+  locationName: GOLD
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec682173-fa4b-4e79-8c9b-188605c26a57
+          stepCounter: c00040c0-69f9-470a-990e-c9d03c6f9ffc
+        config:
+          is_Hub_hk: true
+        dataType: STRING
+        description: ""
+        name: h_order_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 440d92df-b9df-4323-98ba-9cc8081d86fd
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+          - columnReferences:
+              - columnCounter: 30cebdb1-c45a-4742-996e-21996c8862d0
+                stepCounter: 8a64a957-655d-46cb-b0c8-af1c9a1ae540
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2de9b4e3-6c8d-4367-807d-65b9cfc534dc
+          stepCounter: c00040c0-69f9-470a-990e-c9d03c6f9ffc
+        config: {}
+        dataType: LONG
+        description: ""
+        name: o_orderkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c276c375-bc64-4916-9ccf-3c6b6ab0e8c0
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+          - columnReferences:
+              - columnCounter: 4ee5474c-d19f-4291-9a39-b746004e1147
+                stepCounter: 8a64a957-655d-46cb-b0c8-af1c9a1ae540
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 79a700e9-43db-4404-ad51-a4f7325d0a1b
+          stepCounter: c00040c0-69f9-470a-990e-c9d03c6f9ffc
+        config: {}
+        dataType: STRING
+        description: The Record Source (RSRC) describes the source of this data.
+        name: rsrc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3533ad6-4a8e-4181-aa7c-003d947ac539
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+          - columnReferences:
+              - columnCounter: 6d148cae-cc98-4f51-b1e2-fdf0708842db
+                stepCounter: 8a64a957-655d-46cb-b0c8-af1c9a1ae540
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 69a47f13-7f7b-4550-bba9-6bf737c264b0
+          stepCounter: c00040c0-69f9-470a-990e-c9d03c6f9ffc
+        config: {}
+        dataType: TIMESTAMP
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        name: ldts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 21e28051-d386-4693-ac35-0be6e6d2620a
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+          - columnReferences:
+              - columnCounter: 827cacaf-6562-4448-9fd2-330040f609cc
+                stepCounter: 8a64a957-655d-46cb-b0c8-af1c9a1ae540
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: dvstg_orders
+        join:
+          joinCondition: FROM {{ ref('SILVER', 'dvstg_orders') }} `dvstg_orders`
+        name: orders
+        noLinkRefs: []
+      - aliases:
+          dvstg_lineitem: 8a64a957-655d-46cb-b0c8-af1c9a1ae540
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: dvstg_lineitem
+        join:
+          joinCondition: FROM {{ ref('SILVER', 'dvstg_lineitem') }} `dvstg_lineitem`
+        name: lineitem
+        noLinkRefs: []
+  name: hub_order
+  overrideSQL: false
+  schema: ""
+  sqlType: "6"
+  type: sql
+  version: 1
+type: Node

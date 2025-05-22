@@ -1,0 +1,137 @@
+fileVersion: 1
+id: d3c3c812-7388-4e7d-94bb-66c317cdd4a6
+name: link_order_customer
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: GOLD
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92b33026-f5e3-42fc-8372-5834cdf13ee1
+          stepCounter: d3c3c812-7388-4e7d-94bb-66c317cdd4a6
+        config:
+          is_Link_hk: true
+        dataType: STRING
+        description: ""
+        name: l_order_customer_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d086e2d-b015-44f0-9b62-967ce4ed181e
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f6eed965-0f33-4eef-8ef3-36a71d696cdb
+          stepCounter: d3c3c812-7388-4e7d-94bb-66c317cdd4a6
+        config: {}
+        dataType: STRING
+        description: ""
+        name: h_order_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 440d92df-b9df-4323-98ba-9cc8081d86fd
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c21cd957-e1e9-412e-80eb-d8f2f3373b97
+          stepCounter: d3c3c812-7388-4e7d-94bb-66c317cdd4a6
+        config: {}
+        dataType: STRING
+        description: ""
+        name: h_customer_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8cd7fd20-24d9-44d9-9a1e-dc0565903a01
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 49f88604-d1be-4449-911f-5219e175d481
+          stepCounter: d3c3c812-7388-4e7d-94bb-66c317cdd4a6
+        config: {}
+        dataType: LONG
+        description: ""
+        name: o_orderkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c276c375-bc64-4916-9ccf-3c6b6ab0e8c0
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee1721f5-c60b-428c-be21-b55cac5488d5
+          stepCounter: d3c3c812-7388-4e7d-94bb-66c317cdd4a6
+        config: {}
+        dataType: LONG
+        description: ""
+        name: o_custkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 132fce39-1801-4de5-84c5-0d2a2828ba98
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ae8a473-5c74-4db6-b561-0f75d12e477b
+          stepCounter: d3c3c812-7388-4e7d-94bb-66c317cdd4a6
+        config: {}
+        dataType: STRING
+        description: The Record Source (RSRC) describes the source of this data.
+        name: rsrc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3533ad6-4a8e-4181-aa7c-003d947ac539
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f74f065-0ffe-42dc-b500-e2fe43ce6952
+          stepCounter: d3c3c812-7388-4e7d-94bb-66c317cdd4a6
+        config: {}
+        dataType: TIMESTAMP
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        name: ldts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 21e28051-d386-4693-ac35-0be6e6d2620a
+                stepCounter: 39f98fde-ad93-42d0-a58c-8c479ca43368
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: dvstg_orders
+        join:
+          joinCondition: FROM {{ ref('SILVER', 'dvstg_orders') }} `dvstg_orders`
+        name: link_order_customer
+        noLinkRefs: []
+  name: link_order_customer
+  overrideSQL: false
+  schema: ""
+  sqlType: "7"
+  type: sql
+  version: 1
+type: Node

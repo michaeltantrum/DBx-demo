@@ -1,0 +1,152 @@
+fileVersion: 1
+id: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+name: satv0_nation
+operation:
+  config:
+    disable_hwm: false
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: GOLD
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb4ed4d2-3b84-44d3-bb69-37c9c4d8b1d0
+          stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+        config: {}
+        dataType: LONG
+        description: ""
+        name: n_nationkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0034cfeb-3d7d-4b5c-a794-5bead5b2f4dc
+                stepCounter: 9c1571a1-8c15-4311-b414-a5872591d496
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb69c953-5b6c-46d7-b235-19ffd419eddc
+          stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: n_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0f1b8477-61b5-4d03-aa5b-cbb0b338bc90
+                stepCounter: 9c1571a1-8c15-4311-b414-a5872591d496
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39fe6fe8-6752-43c3-a4f9-fa90560b9885
+          stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+        config: {}
+        dataType: LONG
+        description: ""
+        name: n_regionkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6887aeba-41b8-4f77-9c53-313886c7ad1c
+                stepCounter: 9c1571a1-8c15-4311-b414-a5872591d496
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d8a8f125-5211-4b3b-a672-07c147aa71af
+          stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: n_comment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25b94d22-c910-4d72-8116-315f70adac99
+                stepCounter: 9c1571a1-8c15-4311-b414-a5872591d496
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b871cbf8-2b97-4d18-bca1-205ba6aebd90
+          stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+        config: {}
+        dataType: TIMESTAMP
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        name: ldts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 44ebc57e-94fb-45b8-9a66-43370486f752
+                stepCounter: 9c1571a1-8c15-4311-b414-a5872591d496
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c59e1ccd-1b65-4ba2-9340-02f959f87eb6
+          stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+        config: {}
+        dataType: STRING
+        description: The Record Source (RSRC) describes the source of this data.
+        name: rsrc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cb45dc3f-c0a9-4c56-8f42-735d60bcbd6e
+                stepCounter: 9c1571a1-8c15-4311-b414-a5872591d496
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dd381043-b67e-4257-b88f-c2e9fe2a3e1b
+          stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+        config:
+          is_hk: true
+        dataType: STRING
+        description: ""
+        name: h_nation_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8aac0e6a-e4a3-4fef-8c24-4092e8b3983a
+                stepCounter: 9c1571a1-8c15-4311-b414-a5872591d496
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a13db485-d796-4c47-bc62-6d97f7a96eed
+          stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+        config:
+          is_hd: true
+        dataType: STRING
+        description: ""
+        name: s_nation_hash
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 486321c1-0a7a-4d0d-b277-e266e4271f69
+                stepCounter: 9c1571a1-8c15-4311-b414-a5872591d496
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: dvstg_nation
+        join:
+          joinCondition: FROM {{ ref('SILVER', 'dvstg_nation') }} `dvstg_nation`
+        name: satv0_nation
+        noLinkRefs: []
+  name: satv0_nation
+  overrideSQL: false
+  schema: ""
+  sqlType: "8"
+  type: sql
+  version: 1
+type: Node

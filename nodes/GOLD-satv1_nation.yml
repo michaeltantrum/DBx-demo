@@ -1,0 +1,194 @@
+fileVersion: 1
+id: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+name: satv1_nation
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: GOLD
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d80872a1-55bf-4103-a533-62359ca4ae76
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config: {}
+        dataType: LONG
+        description: ""
+        name: n_nationkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fb4ed4d2-3b84-44d3-bb69-37c9c4d8b1d0
+                stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cba4f36e-d1b7-46a8-bc59-2fa7ecbc9399
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config: {}
+        dataType: STRING
+        description: ""
+        name: n_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb69c953-5b6c-46d7-b235-19ffd419eddc
+                stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fafb701f-1111-4f5e-bcbe-f3fbea4ea748
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config: {}
+        dataType: LONG
+        description: ""
+        name: n_regionkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 39fe6fe8-6752-43c3-a4f9-fa90560b9885
+                stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 535fe6fe-d415-4c68-9d2a-9266ec525b2d
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config: {}
+        dataType: STRING
+        description: ""
+        name: n_comment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d8a8f125-5211-4b3b-a672-07c147aa71af
+                stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b800b82-eb0e-4b40-bc6a-59dc56380a76
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config: {}
+        dataType: TIMESTAMP
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        name: ldts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b871cbf8-2b97-4d18-bca1-205ba6aebd90
+                stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d3b588b0-3063-49c0-8c21-1ba2359a74b7
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config: {}
+        dataType: STRING
+        description: The Record Source (RSRC) describes the source of this data.
+        name: rsrc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c59e1ccd-1b65-4ba2-9340-02f959f87eb6
+                stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 070f16dc-ba97-442b-acba-caea377cb5ac
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config:
+          is_hk: true
+        dataType: STRING
+        description: ""
+        name: h_nation_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dd381043-b67e-4257-b88f-c2e9fe2a3e1b
+                stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 820d69f2-6bda-4268-8acb-97637de399be
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config: {}
+        dataType: STRING
+        description: ""
+        name: s_nation_hash
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a13db485-d796-4c47-bc62-6d97f7a96eed
+                stepCounter: ce2424c5-9c53-432a-a5e1-de70118fbd2f
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 590886b3-c866-4a2e-a846-4a3db30622df
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        is_system_ledts: true
+        name: ledts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: |-
+              COALESCE(LEAD(`{{ datavault4coalesce.config.ldts_alias }}` - INTERVAL '1 MICROSECOND') 
+              OVER (PARTITION BY `{{ get_value_by_column_attribute("is_hk") }}` 
+              ORDER BY `{{ datavault4coalesce.config.ldts_alias }}`), {{ datavault4coalesce__string_to_timestamp(datavault4coalesce.config.timestamp_format, datavault4coalesce.config.end_of_all_times) }})
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b92e2e9-c872-4996-829d-eaec1eb36d82
+          stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: ""
+        is_system_current_col: true
+        name: is_current
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: |-
+              CASE 
+                WHEN 
+                  LEAD(`{{ datavault4coalesce.config.ldts_alias }}` - INTERVAL '1 MICROSECOND') 
+                  OVER (PARTITION BY `{{ get_value_by_column_attribute("is_hk") }}` 
+                  ORDER BY `{{ datavault4coalesce.config.ldts_alias }}`) IS NULL 
+                THEN TRUE 
+                ELSE FALSE 
+              END
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: GOLD
+            nodeName: satv0_nation
+        join:
+          joinCondition: FROM {{ ref('GOLD', 'satv0_nation') }} `satv0_nation`
+        name: satv1_nation
+        noLinkRefs: []
+  name: satv1_nation
+  overrideSQL: false
+  schema: ""
+  sqlType: "9"
+  type: sql
+  version: 1
+type: Node

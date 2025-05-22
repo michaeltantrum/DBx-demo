@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "130"
+includeSelector: "+{ name: fct_* }"
+name: Process Facts
+type: Job

@@ -1,0 +1,179 @@
+fileVersion: 1
+id: 18f78114-92bb-44ce-aa36-4bf95e57b450
+name: stg_nation
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: SILVER
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe8b21e0-952a-497b-9bf5-b87c20919517
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: LONG
+        description: ""
+        name: n_nationkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d80872a1-55bf-4103-a533-62359ca4ae76
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60f2a934-16fd-471f-a1b4-46d96f005530
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: STRING
+        description: ""
+        name: n_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cba4f36e-d1b7-46a8-bc59-2fa7ecbc9399
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: edcae21b-fa01-4c6c-baa7-17264cd3266e
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: LONG
+        description: ""
+        name: n_regionkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fafb701f-1111-4f5e-bcbe-f3fbea4ea748
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a9f6f1a-a6ab-43b3-b875-b09967f5887d
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: STRING
+        description: ""
+        name: n_comment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 535fe6fe-d415-4c68-9d2a-9266ec525b2d
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4d6cec3-1be2-4e14-9718-3acc769c7148
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: TIMESTAMP
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        name: ldts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b800b82-eb0e-4b40-bc6a-59dc56380a76
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a613fe4-e54b-429e-ab79-8ca594a258de
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: STRING
+        description: The Record Source (RSRC) describes the source of this data.
+        name: rsrc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d3b588b0-3063-49c0-8c21-1ba2359a74b7
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46f4fac9-ffe4-408c-b7b8-41961c9e1386
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: STRING
+        description: ""
+        name: h_nation_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 070f16dc-ba97-442b-acba-caea377cb5ac
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c36522a-fa65-4490-8330-854a260ec339
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: STRING
+        description: ""
+        name: s_nation_hash
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 820d69f2-6bda-4268-8acb-97637de399be
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1020500e-4079-4362-aa26-35977adbb338
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: TIMESTAMP
+        description: ""
+        name: ledts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 590886b3-c866-4a2e-a846-4a3db30622df
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 71c0d2d1-fdcf-4325-9b5b-f671ef06c501
+          stepCounter: 18f78114-92bb-44ce-aa36-4bf95e57b450
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: is_current
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b92e2e9-c872-4996-829d-eaec1eb36d82
+                stepCounter: bc8be0a9-28c5-4914-ac45-5d5f912e3112
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: GOLD
+            nodeName: satv1_nation
+        join:
+          joinCondition: FROM {{ ref('GOLD', 'satv1_nation') }} `satv1_nation`
+        name: stg_nation
+        noLinkRefs: []
+  name: stg_nation
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

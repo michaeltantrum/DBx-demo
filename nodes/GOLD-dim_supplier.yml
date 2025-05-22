@@ -1,0 +1,448 @@
+fileVersion: 1
+id: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+name: dim_supplier
+operation:
+  config:
+    groupByAll: false
+    insertStrategy: UNION ALL
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: false
+  database: ""
+  deployEnabled: true
+  description: Creates or replaces the dim_supplier dimension table in the gold layer, using data from the stg_supplier staging table in the silver layer, managing Type 2 changes.
+  isMultisource: false
+  locationName: GOLD
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e769a8a6-39b5-457c-a502-664ff4d94eeb
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: BIGINT
+        defaultValue: ""
+        description: |-
+          - This column is a surrogate key for the dimension table. 
+          - It is system-generated and has no source column.
+          - This key is used to uniquely identify each supplier record in the data warehouse.
+          - It is used as the primary key for the dimension and as a foreign key in fact tables to link supplier information.
+          - Used in reports and analyses to filter and group data based on supplier characteristics.
+        isSurrogateKey: true
+        name: dim_supplier_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3993e453-67ec-4dd6-8c37-8e7008bf8935
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: LONG
+        description: |-
+          - This column represents the supplier's primary key from the source system.
+          - It originates from the 's_suppkey' column in the 'stg_supplier' table, located in the SILVER layer.
+          - It serves as a business key, uniquely identifying each supplier.
+          - This key is crucial for joining with other tables and maintaining data integrity across the data warehouse.
+          - Downstream, it is used for creating reports and KPIs related to suppliers.
+        isBusinessKey: true
+        name: s_suppkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 11d53372-982a-41ef-adb3-772c8a03184e
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1f1dabe-a945-4ecf-b6c2-bda7430c5e39
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: STRING
+        description: |-
+          - This column contains the name of the supplier.
+          - It is sourced from the 's_name' column of the 'stg_supplier' table in the SILVER layer.
+          - This information is used to identify suppliers in various reports and analyses.
+          - It provides a human-readable identifier for suppliers, complementing the supplier key.
+          - It is essential for understanding supplier performance and trends.
+        name: s_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 109586aa-5e1c-470b-a42b-d809bb194f2f
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44f75b79-2bc6-4e4c-95f8-29dbff4d4a5c
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: STRING
+        description: |-
+          - This column stores the address of the supplier.
+          - It is extracted from the 's_address' column of the 'stg_supplier' table in the SILVER layer.
+          - The supplier's address can be used for geographic analysis and reporting.
+          - It helps in understanding the distribution and location of suppliers.
+          - This information is valuable for logistics, supply chain management, and regional sales analysis.
+        name: s_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e122c15-899a-4cef-892a-d4fa1f1f8671
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a2d9eca-8f88-4b6c-b27a-82466f53ba09
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: LONG
+        description: |-
+          - This column represents the nation key associated with the supplier.
+          - It is derived from the 's_nationkey' column in the 'stg_supplier' table, residing in the SILVER layer.
+          - It is used as a foreign key to link to the 'dim_nation' dimension table.
+          - This key enables filtering and grouping of suppliers by their respective nations.
+          - It is used in reports and analyses to understand supplier distribution and performance by country.
+        name: s_nationkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 134087c1-cb08-4175-975e-2653070510bb
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b44afb12-c9a4-4e87-8ac2-734be37fce9e
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: STRING
+        description: |-
+          - This column stores the phone number of the supplier.
+          - It is sourced from the 's_phone' column of the 'stg_supplier' table in the SILVER layer.
+          - The supplier's phone number can be used for contact purposes and communication.
+          - This information is valuable for customer service, sales, and relationship management.
+          - It can be used for verification and validation purposes.
+        name: s_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f6d7ce2e-f304-446b-942c-40181bc36383
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d56de473-3159-488d-ab6d-8ace121bc4f2
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: DECIMAL
+        description: |-
+          - This column represents the account balance of the supplier.
+          - It is sourced from the 's_acctbal' column of the 'stg_supplier' table in the SILVER layer.
+          - This numerical value is crucial for financial analysis and reporting.
+          - It is used to assess the financial health and stability of suppliers.
+          - Downstream, it is used in reports and KPIs related to supplier financials and credit risk.
+        name: s_acctbal
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 524a9b22-6359-4a64-8860-b53284d55774
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4d7a6464-6432-4c72-8b16-0497460b64ce
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: TIMESTAMP
+        description: |-
+          - This column represents the Load Date Timestamp (LDTS), indicating when the data was first loaded into the data warehouse.
+          - It is sourced from the 'ldts' column of the 'stg_supplier' table in the SILVER layer.
+          - The LDTS is crucial for tracking data lineage and understanding data freshness.
+          - It helps in auditing and troubleshooting data-related issues.
+          - It is used for incremental data loading and change data capture processes.
+        name: ldts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 98967209-346f-4b70-b9ec-aaaf35adc218
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3ade683-44f9-4178-9d5c-78d15945d48e
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: TIMESTAMP
+        description: |-
+          - This column represents the Last Effective Date Timestamp (LEDTS).
+          - It is sourced from the 'ledts' column of the 'stg_supplier' table in the SILVER layer.
+          - The LEDTS signifies the end of the validity period for a specific record.
+          - It is essential for temporal data analysis and historical reporting.
+          - The information is critical for tracking changes in supplier data over time.
+        name: ledts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 196c58c6-4ae8-470c-b334-77bbb2e450ee
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 776ec809-2e50-4680-92ac-aa86982fe63e
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: STRING
+        description: |-
+          - This column represents the Record Source (RSRC) and identifies the origin of the data.
+          - It is sourced from the 'rsrc' column of the 'stg_supplier' table in the SILVER layer.
+          - The RSRC helps in tracing data back to its original source system.
+          - It is valuable for data governance, auditing, and data quality initiatives.
+          - The column is used for data integration and reconciliation processes.
+        name: rsrc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5c5a3e77-7b79-47df-9418-f133ec20d87d
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5665d803-5127-4a4b-9ef8-42ea001f9095
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: STRING
+        description: |-
+          - This column represents the hash key for the supplier.
+          - It is sourced from the 'h_supplier_key' column of the 'stg_supplier' table in the SILVER layer.
+          - This hash key is typically used for data deduplication and data matching.
+          - It provides a unique identifier for each supplier record based on its content.
+          - It is often used in data integration processes to identify and merge duplicate records.
+        name: h_supplier_key
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c764f62-92c8-4730-978f-ce10b26d1762
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b766930b-4007-4f71-b535-2bbe3f05e640
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: STRING
+        description: |-
+          - This column represents the hash of all the supplier attributes.
+          - It is sourced from the 's_supplier_hash' column of the 'stg_supplier' table in the SILVER layer.
+          - The hash is used to detect changes in supplier data over time.
+          - It is valuable for change data capture (CDC) and data auditing purposes.
+          - It helps to efficiently identify records that have been updated or modified.
+        name: s_supplier_hash
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1bb0cefe-4a55-4368-b390-a5caba2e0cdb
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 63bca8f1-409c-4bbf-b6c3-2cf1ded35945
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: BOOLEAN
+        description: |-
+          - This column indicates whether a supplier record is the most current version.
+          - It is sourced from the 'is_current' column of the 'stg_supplier' table in the SILVER layer.
+          - The flag simplifies querying for the latest supplier information.
+          - It is valuable for reporting and analysis that requires up-to-date data.
+          - It is used in temporal data management to identify the active record for each supplier.
+        name: is_current
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8f98ae9-48dd-4e16-8f5e-88ee10ca3a2a
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 534eb1b6-10c1-49e5-8e93-66951f0e490f
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: STRING
+        description: |-
+          - This column categorizes the supplier into different types.
+          - It is sourced from the 'supplier_category' column of the 'stg_supplier' table in the SILVER layer.
+          - The information is used for segmenting suppliers for targeted analysis.
+          - It is valuable for understanding the composition and distribution of suppliers.
+          - Downstream it is used in reports and KPIs related to supplier performance by category.
+        isChangeTracking: true
+        name: supplier_category
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b40e03d6-0020-4901-9b64-e3b70cb03682
+                stepCounter: 6407325d-2032-4549-9184-517db4d12685
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ecbcae8-59fc-4ec6-8d52-6241c183ddc2
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: NUMERIC
+        defaultValue: ""
+        description: |-
+          - This column is system-generated and tracks the version number of a record within the dimension table.
+          - It has no source column, as it is automatically assigned during the data loading process.
+          - This column is essential for auditing and tracking changes to records over time.
+          - It is incremented each time a record is updated, thus maintaining a historical log.
+          - The data is used for point-in-time analysis and historical reporting.
+        isSystemVersion: true
+        name: system_version
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 07c07c56-1936-4cdc-a64b-57f7d98626cd
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: VARCHAR(1)
+        defaultValue: ""
+        description: |-
+          - This column is system-generated and indicates whether a record is the current version.
+          - It has no source column, as it is automatically assigned during the data loading process.
+          - The flag simplifies querying for the most up-to-date information, improving query performance.
+          - It is a VARCHAR(1) column, typically storing 'Y' for current and 'N' for non-current records.
+          - The data is used to streamline reporting and analysis by filtering out historical records.
+        isSystemCurrentFlag: true
+        name: system_current_flag
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9fc41a8-0648-4c86-aa64-624aeb023e78
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: |-
+          - This column is system-generated and captures the timestamp when a record becomes effective.
+          - It has no direct source column, instead, it uses the CURRENT_TIMESTAMP function during record creation.
+          - This date signifies the beginning of the validity period for a specific record version.
+          - It is crucial for temporal data analysis, enabling tracking of changes over time.
+          - The column is used for reporting, auditing, and ensuring data accuracy.
+        isSystemStartDate: true
+        name: system_start_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbc4ea03-1b5e-44eb-9597-5ff27e818bc4
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: |-
+          - This column is system-generated and marks the timestamp when a record is no longer the current version.
+          - It does not have a source column; it defaults to '2999-12-31 00:00:00' for current records, indicating indefinite validity.
+          - When a record is updated, this field is populated with the timestamp of the update.
+          - It is critical for historical reporting and point-in-time analysis.
+          - The data is used to manage data versions, track data validity, and perform temporal queries.
+        isSystemEndDate: true
+        name: system_end_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST('2999-12-31 00:00:00' AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce398e11-ad20-40b5-9ba2-fafdfe6819e5
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: |-
+          - This column is system-generated and records the timestamp when a record was initially created in the system.
+          - It has no direct source column; it uses the CURRENT_TIMESTAMP function during record creation.
+          - This timestamp is essential for auditing and tracking the origin of data.
+          - It remains constant throughout the record's lifecycle, providing a creation reference.
+          - The data is used to analyze data creation patterns, identify data anomalies, and ensure data integrity.
+        isSystemCreateDate: true
+        name: system_create_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8840ca11-560e-489f-9374-87f014bd0935
+          stepCounter: fabb1a6d-f4ae-43e3-8877-b6c7feca8a2f
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: |-
+          - This column is system-generated and captures the timestamp when a record was last updated.
+          - It has no direct source column; instead, it uses the CURRENT_TIMESTAMP function during record modification.
+          - This date is crucial for auditing and tracking changes to records over time.
+          - It helps in identifying the most recent version of a record.
+          - The data is used to monitor data changes, troubleshoot data issues, and maintain data accuracy.
+        isSystemUpdateDate: true
+        name: system_update_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: stg_supplier
+        join:
+          joinCondition: FROM {{ ref('SILVER', 'stg_supplier') }} `stg_supplier`
+        name: dim_supplier
+        noLinkRefs: []
+  name: dim_supplier
+  overrideSQL: false
+  schema: ""
+  sqlType: "342"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,273 @@
+fileVersion: 1
+id: c2696350-4aaf-49ad-bddf-df275a622b3d
+name: dvstg_customer
+operation:
+  config:
+    contains_multiactive_data: false
+    generate_ghost_records: true
+    is_ldts: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: SILVER
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4234b1fe-de80-4af0-b03b-248379c8d9b8
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: LONG
+        description: ""
+        name: c_custkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a5918dbb-9c60-458b-ab01-52985a24c13f
+                stepCounter: fad70aa6-304e-4297-b3cb-07472b18b2fd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a35b327-49c6-4e37-b35a-bad91cfb71aa
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        description: ""
+        name: c_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 90fe6ce1-1405-4082-8f8f-5f435bb6a1f5
+                stepCounter: fad70aa6-304e-4297-b3cb-07472b18b2fd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7329bdf6-2705-46dd-a39a-cc667f82773b
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        description: ""
+        name: c_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2f56b063-5c95-4928-8187-676a7ecc4806
+                stepCounter: fad70aa6-304e-4297-b3cb-07472b18b2fd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ce8bb97-f80c-4c21-926c-45d71bd0f51a
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: LONG
+        description: ""
+        name: c_nationkey
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 817186f7-5250-4cfa-91ac-7d5db957a928
+                stepCounter: fad70aa6-304e-4297-b3cb-07472b18b2fd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bac79aa1-7d0d-4922-a359-61791469920a
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        description: ""
+        name: c_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 40776a6c-ab87-472b-8056-9d63b5e59b11
+                stepCounter: fad70aa6-304e-4297-b3cb-07472b18b2fd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6be1416c-2129-4d2a-919d-77903fa90cdf
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: DECIMAL
+        description: ""
+        name: c_acctbal
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5a7c5586-0fe8-48ea-9ce8-3b90abcf584f
+                stepCounter: fad70aa6-304e-4297-b3cb-07472b18b2fd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce1a57c7-b6fa-4328-9b3f-763bd5f83ccb
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        description: ""
+        name: c_mktsegment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 49d895d8-1e1b-4db9-bdda-5fc9763cd098
+                stepCounter: fad70aa6-304e-4297-b3cb-07472b18b2fd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d771d7fc-c520-4340-8f5c-9a608aa86acc
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        description: ""
+        name: c_comment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9907cb78-488f-4f57-8a09-c193da0f4e2a
+                stepCounter: fad70aa6-304e-4297-b3cb-07472b18b2fd
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c03622a7-e311-40a2-ad0a-d058b2ef69d9
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: The Load Date Timestamp (LDTS) describes when this data first arrived in the Data Warehouse.
+        is_system_ldts: true
+        name: ldts
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CURRENT_TIMESTAMP()
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9afb29e4-47d1-4680-99d4-5b47cd51f12d
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: The Record Source (RSRC) describes the source of this data.
+        is_system_rsrc: true
+        name: rsrc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "{{record_source()}}"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 245f0181-ef15-4f98-83f1-b49bdac6bd71
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: SHA1
+        hashedColumns:
+          - columnCounter: 4234b1fe-de80-4af0-b03b-248379c8d9b8
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        name: h_customer_key
+        nullable: true
+        sourceColumnReferences: []
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 09d91c1a-6b01-4ad3-bfab-2e7e13e3ed0e
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: SHA1
+        hashedColumns:
+          - columnCounter: 2a35b327-49c6-4e37-b35a-bad91cfb71aa
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+          - columnCounter: 7329bdf6-2705-46dd-a39a-cc667f82773b
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+          - columnCounter: 9ce8bb97-f80c-4c21-926c-45d71bd0f51a
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+          - columnCounter: bac79aa1-7d0d-4922-a359-61791469920a
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+          - columnCounter: 6be1416c-2129-4d2a-919d-77903fa90cdf
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+          - columnCounter: ce1a57c7-b6fa-4328-9b3f-763bd5f83ccb
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+          - columnCounter: d771d7fc-c520-4340-8f5c-9a608aa86acc
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        name: s_customer_hash
+        nullable: true
+        sourceColumnReferences: []
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9915101-8458-4149-b4a2-511930ae1170
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: SHA1
+        hashedColumns:
+          - columnCounter: 9ce8bb97-f80c-4c21-926c-45d71bd0f51a
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        name: h_nation_key
+        nullable: true
+        sourceColumnReferences: []
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a2620ac6-e2d5-4c0b-885b-b001b72c213d
+          stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: SHA1
+        hashedColumns:
+          - columnCounter: 4234b1fe-de80-4af0-b03b-248379c8d9b8
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+          - columnCounter: 9ce8bb97-f80c-4c21-926c-45d71bd0f51a
+            stepCounter: c2696350-4aaf-49ad-bddf-df275a622b3d
+        name: l_customer_nation_key
+        nullable: true
+        sourceColumnReferences: []
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: BRONZE
+            nodeName: customer
+        join:
+          joinCondition: FROM {{ ref('BRONZE', 'customer') }} `customer`
+        name: dvstg_customer
+        noLinkRefs: []
+  name: dvstg_customer
+  overrideSQL: false
+  schema: ""
+  sqlType: "4"
+  type: sql
+  version: 1
+type: Node
