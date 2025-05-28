@@ -1,0 +1,14 @@
+fileVersion: 1
+id: "28"
+mappingDefinitions:
+  BRONZE:
+    database: mtantrum_dev
+    schema: bronze
+  GOLD:
+    database: mtantrum_prod
+    schema: gold
+  SILVER:
+    database: mtantrum_prod
+    schema: silver
+name: DBx Production
+type: Environment
