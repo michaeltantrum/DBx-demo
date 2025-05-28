@@ -1,0 +1,67 @@
+fileVersion: 1
+id: 459384be-d80a-4ad2-a9b8-2b6185b9b4fc
+name: region
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: BRONZE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a62c5780-eac2-4555-88e1-5ce66ffe4406
+          stepCounter: 459384be-d80a-4ad2-a9b8-2b6185b9b4fc
+        config: {}
+        dataType: LONG
+        defaultValue: ""
+        description: ""
+        name: r_region_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b67d347-0791-44b0-84bd-59005e737cb5
+          stepCounter: 459384be-d80a-4ad2-a9b8-2b6185b9b4fc
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: r_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a3fb1bd-71bc-4953-854e-3dfdd63eeb5d
+          stepCounter: 459384be-d80a-4ad2-a9b8-2b6185b9b4fc
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: r_comment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+  name: region
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
