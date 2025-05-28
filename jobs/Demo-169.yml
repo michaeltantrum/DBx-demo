@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "169"
+includeSelector: "+{ location: SILVER name: fct_* }+"
+name: Demo
+type: Job
