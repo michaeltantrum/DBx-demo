@@ -1,0 +1,13 @@
+config:
+  entities:
+    nodeTypes:
+      "368":
+        defaultStorageLocation: SILVER
+        isDisabled: false
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/databricks/delta-live-table"
+name: Delta-Live
+packageID: "@coalesce/databricks/delta-live-table"
+releaseID: 01701713-c725-4130-91d8-e86f01b6aabc
+type: Package

@@ -1,0 +1,25 @@
+config:
+  entities:
+    nodeTypes:
+      "363":
+        defaultStorageLocation: SILVER
+        isDisabled: false
+      "365":
+        defaultStorageLocation: GOLD
+        isDisabled: false
+      "366":
+        defaultStorageLocation: GOLD
+        isDisabled: false
+      "367":
+        defaultStorageLocation: SILVER
+        isDisabled: false
+      "452":
+        defaultStorageLocation: SILVER
+        isDisabled: false
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/databricks/base-node-types"
+name: Base-Nodes
+packageID: "@coalesce/databricks/base-node-types"
+releaseID: 7e3769b1-1f6e-4bc7-bff2-4cb40f8b24b4
+type: Package
