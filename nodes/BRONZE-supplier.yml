@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 1cc09b8b-110f-4485-8456-c7970ead9604
-name: orders
+id: a6d30f85-385d-4f75-97ca-02d980c14d24
+name: supplier
 operation:
   database: ""
   deployEnabled: true
@@ -13,13 +13,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 2f5e8b87-2185-4497-a8fd-1ea0cc5e9d7f
-          stepCounter: 1cc09b8b-110f-4485-8456-c7970ead9604
+          columnCounter: b2d9d327-b2ba-4007-b217-e2a0ba7f3419
+          stepCounter: a6d30f85-385d-4f75-97ca-02d980c14d24
         config: {}
         dataType: LONG
         defaultValue: ""
         description: ""
-        name: o_order_id
+        name: s_supp_id
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
@@ -30,30 +30,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 9b01abbf-0722-4a13-9d35-d4fc091859f4
-          stepCounter: 1cc09b8b-110f-4485-8456-c7970ead9604
-        config: {}
-        dataType: LONG
-        defaultValue: ""
-        description: ""
-        name: o_cust_id
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 7384246d-f985-489e-8133-e11c21975931
-          stepCounter: 1cc09b8b-110f-4485-8456-c7970ead9604
+          columnCounter: bdc15b76-1bde-45a8-88f1-e6aa383ad0a9
+          stepCounter: a6d30f85-385d-4f75-97ca-02d980c14d24
         config: {}
         dataType: STRING
         defaultValue: ""
         description: ""
-        name: o_orderstatus
+        name: s_name
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
@@ -64,13 +47,64 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 9209eb57-d71d-471e-891a-951afabd5058
-          stepCounter: 1cc09b8b-110f-4485-8456-c7970ead9604
+          columnCounter: 8e21b00d-eaa9-4e07-9a0f-a1602d0d4f6c
+          stepCounter: a6d30f85-385d-4f75-97ca-02d980c14d24
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: s_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 383d8cd5-e8e4-4c52-bd7c-95e8f3700616
+          stepCounter: a6d30f85-385d-4f75-97ca-02d980c14d24
+        config: {}
+        dataType: LONG
+        defaultValue: ""
+        description: ""
+        name: s_nation_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c78b099-3170-4a0e-8547-7f8fb3929f75
+          stepCounter: a6d30f85-385d-4f75-97ca-02d980c14d24
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: s_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 570683ad-dc0b-4d3c-95b6-e5914b098ada
+          stepCounter: a6d30f85-385d-4f75-97ca-02d980c14d24
         config: {}
         dataType: DECIMAL
         defaultValue: ""
         description: ""
-        name: o_totalprice
+        name: s_acctbal
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
@@ -81,87 +115,19 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 92e7b48f-4e4b-42e8-872e-a1f1bcabfd0b
-          stepCounter: 1cc09b8b-110f-4485-8456-c7970ead9604
-        config: {}
-        dataType: DATE
-        defaultValue: ""
-        description: ""
-        name: o_orderdate
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 2544729b-9eb7-422c-90ef-cbdec309875a
-          stepCounter: 1cc09b8b-110f-4485-8456-c7970ead9604
+          columnCounter: 9d3b8c15-3df6-4eae-ae6e-82a5abff14a5
+          stepCounter: a6d30f85-385d-4f75-97ca-02d980c14d24
         config: {}
         dataType: STRING
         defaultValue: ""
         description: ""
-        name: o_orderpriority
+        name: s_comment
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
         transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 9b88bcda-1f92-4a09-bdb5-21d50bacd402
-          stepCounter: 1cc09b8b-110f-4485-8456-c7970ead9604
-        config: {}
-        dataType: STRING
-        defaultValue: ""
-        description: ""
-        name: o_clerk
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 748e3135-3239-440b-83e4-ac37bdc98661
-          stepCounter: 1cc09b8b-110f-4485-8456-c7970ead9604
-        config: {}
-        dataType: INT
-        defaultValue: ""
-        description: ""
-        name: o_shippriority
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: c11cb857-400f-40a3-9f5e-715e9195cbd3
-          stepCounter: 1cc09b8b-110f-4485-8456-c7970ead9604
-        config: {}
-        dataType: STRING
-        defaultValue: ""
-        description: ""
-        name: o_comment
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-  name: orders
+  name: supplier
   schema: ""
   sqlType: Source
   type: sourceInput

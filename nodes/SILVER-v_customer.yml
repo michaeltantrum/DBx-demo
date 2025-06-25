@@ -1,5 +1,5 @@
 fileVersion: 1
-id: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+id: eb70fe60-8285-41c0-8b3b-2ba31da879f5
 name: v_customer
 operation:
   config:
@@ -9,7 +9,7 @@ operation:
     selectDistinct: false
   database: ""
   deployEnabled: true
-  description: ""
+  description: This node creates the dim_customer dimension table in the Gold layer and populates it with data from the stg_customer table in the Silver layer.
   isMultisource: false
   locationName: SILVER
   materializationType: view
@@ -18,8 +18,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: a51c1e4f-2bb5-42d7-956b-ebad6ef998cc
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 1ff5ccdc-45a0-4ab4-bfaf-de3599c8cefd
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: BIGINT
         description: ""
@@ -27,170 +27,222 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: bba50029-6a6c-4cce-9bee-4dd07e8090ea
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: f62cde9c-d389-4afe-9e4c-6495f5df8b98
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 357765fe-8c8c-4984-a933-d30cd0a71d63
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 5aaa1551-463a-4a7c-8f67-37295f4998e1
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: LONG
-        description: ""
+        description: |-
+          - This column represents the customer identifier.
+          - It originates from the 'c_cust_id' column in the 'customer' table within the Bronze layer.
+          - It serves as a key attribute for identifying customer records, and is crucial for linking customer information across various business processes.
+          - It supports reporting and analysis related to customer behavior and trends.
+          - Data engineers can use it to trace data lineage back to the source system and ensure data accuracy.
         name: c_cust_id
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: a59da4c9-38b6-4c22-b2c5-04b2a6d451e9
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: 80a3a6a7-4c03-41b7-a279-aa0d7c0f80c9
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: d87a80a4-ac2b-4fdf-b0c4-140c219d2f33
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 914ef00f-5673-48ee-8d55-ce9eae0118ea
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: STRING
-        description: ""
+        description: |-
+          - This column represents the customer's name.
+          - It is derived from the 'c_name' column in the 'customer' table in the Bronze layer.
+          - The transformation applied is `UPPER()`, which converts all characters to uppercase.
+          - This column is essential for customer identification and communication.
+          - It is used in reports, customer service applications, and marketing campaigns to personalize interactions and track customer engagement.
         name: c_name
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 3fda901e-6a03-4b6a-9230-7773662d7b6f
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: d9eb550e-2a4e-47e4-a6cc-bec64f2a085a
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 28478b00-1658-4f80-80ac-d651133e8371
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: d04553ab-2d4e-45c5-bd2e-b0198698b8a3
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: STRING
-        description: ""
+        description: |-
+          - This column contains the customer's address.
+          - It is sourced from the 'c_address' column of the 'customer' table in the Bronze layer.
+          - The transformation applied is `UPPER()`, which converts all characters to uppercase.
+          - It is used for shipping, billing, and geographic analysis of customer distribution.
+          - The column supports location-based reporting, targeted marketing efforts, and logistics optimization.
         name: c_address
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 254c0479-e765-4e0d-ac1a-022f30c81708
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: 77da7879-bdf8-41b4-b753-227ee517067b
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 8fe5f442-aa98-4640-81ba-16512339b174
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 398e8347-64c7-4f51-b80b-8c32727d919f
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: LONG
-        description: ""
+        description: |-
+          - This column represents the nation identifier associated with the customer.
+          - It is sourced from the 'c_nation_id' column in the 'customer' table in the Bronze layer.
+          - It is used to link customer records to their respective nations, facilitating geographical analysis and reporting.
+          - It supports business metrics related to international sales and customer distribution by country.
+          - Data engineers can use it to ensure data consistency and integrity across different geographical segments.
         name: c_nation_id
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: f10f1d08-e5a9-4cd0-b8d2-bc3b658869cf
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: 311eed6f-4429-433d-aded-861b2d432a3b
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 38eec10e-ecc8-4583-ba52-bd1102ca6bd3
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 66af433b-dcc1-4f1d-8b04-57190d544af1
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: STRING
-        description: ""
+        description: |-
+          - This column represents the name of the nation.
+          - It is derived from the 'n_name' column in the 'nation' table in the Bronze layer.
+          - The transformation applied is `UPPER()`, which converts all characters to uppercase.
+          - It supports reporting and analysis related to customer demographics and international sales.
+          - It enables the creation of business metrics and KPIs related to national markets.
+          - Data engineers can use it to trace data lineage and ensure data quality.
         name: nation_name
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: cfdab06e-3c9b-4156-bcfe-f9c057631f04
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: caeea052-1b18-4aed-9a20-260007dfb104
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 236b2d22-2121-4518-9bba-c1149fc22779
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: e0477c3a-b836-44c7-b00c-223560095a4a
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: STRING
-        description: ""
+        description: |-
+          - This column represents the name of the region.
+          - It is sourced from the 'r_name' column in the 'region' table in the Bronze layer.
+          - The transformation applied is `UPPER()`, which converts all characters to uppercase.
+          - This column supports geographical analysis, regional sales reporting, and targeted marketing campaigns.
+          - It allows business users to understand performance variations across different regions and optimize strategies accordingly.
         name: region_name
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 203c1873-1273-41cc-9306-16968438d87f
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: de1e8968-371b-4f57-aae3-3a5c8ecd7bcc
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 3cc991c8-e42a-464b-8fe2-4cdb9d50dadc
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 4eef3067-7755-491b-a7b7-d128e455ead8
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: STRING
-        description: ""
+        description: |-
+          - This column contains the customer's phone number.
+          - It is sourced from the 'c_phone' column of the 'customer' table in the Bronze layer.
+          - The transformation applied is `UPPER()`, which converts all characters to uppercase.
+          - It is used for customer contact and communication purposes.
+          - This column supports customer service operations, marketing campaigns, and data validation efforts.
+          - Data engineers can use it to ensure data accuracy and compliance with data privacy regulations.
         name: c_phone
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: f35b2893-3c56-42f5-ab42-61e892f84a33
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: b00b99bc-13a6-476f-82cb-443d3809be5b
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 3a6f3050-9d9e-4d6f-ab96-27c376df79d9
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 1a726856-e6c3-436a-b023-af545dcd99a9
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: DECIMAL
-        description: ""
+        description: |-
+          - This column represents the customer's account balance.
+          - It is sourced from the 'c_acctbal' column in the 'customer' table in the Bronze layer.
+          - It is a key indicator of customer financial status and is used in credit risk assessment and financial reporting.
+          - It supports business metrics such as average account balance, total customer assets, and customer segmentation based on account value.
         name: c_acctbal
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 91b89952-352a-491c-b90e-39ec92d7c584
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: 6273d623-532e-4ae1-8bfb-4edbb2266052
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 9d1da828-ad26-4fbb-af80-396887e00875
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 4a4144de-9732-4418-bc9d-08389c90ff38
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: STRING
-        description: ""
+        description: |-
+          - This column represents the market segment to which the customer belongs.
+          - It is derived from the 'c_mktsegment' column in the 'customer' table in the Bronze layer.
+          - The transformation applied is `UPPER()`, which converts all characters to uppercase.
+          - This column is used for targeted marketing campaigns, customer segmentation, and sales analysis.
+          - It helps in understanding customer preferences and tailoring business strategies to specific market segments.
         name: c_mktsegment
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 9fb7eece-0b67-4c1c-bf34-83d420964060
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: 90cf93f5-88e1-4e66-8f55-155cb7c8b5f8
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: b207626a-5dc5-4f7d-84bc-81a1e57b2709
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 351117ac-1d5a-4af3-8f56-499cfb488102
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: STRING
-        description: ""
+        description: |-
+          - This column contains comments or notes about the customer.
+          - It is sourced from the 'c_comment' column in the 'customer' table in the Bronze layer.
+          - The transformation applied is `UPPER()`, which converts all characters to uppercase.
+          - It can include additional information relevant to customer interactions or preferences.
+          - This column is useful for customer service, sales analysis, and identifying specific customer needs or issues.
         name: c_comment
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: a8f5fa97-9504-492a-bc89-171cbeace526
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
-            transform: ""
-      - acceptedValues:
-          strictMatch: false
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: c33bcc89-eaa5-4d99-b533-e341d0ba3b82
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
-        config: {}
-        dataType: STRING
-        description: ""
-        name: customer_category
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 5e980df8-4b3b-44c9-b320-c0f91cde312b
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: 6c7922cc-eb6b-40dd-ad05-7961bc1715be
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 758405b2-8454-402a-a9b8-34ca65dc5953
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: be212196-4498-4a55-94ca-5fcd084140d4
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
+        config: {}
+        dataType: STRING
+        description: |-
+          - This column categorizes customers based on their account balance, defining whether if it is greater than 5000 or not.
+          - If the account balance ('c_acctbal' from the 'customer' table) is greater than 5000, the column inherits the customer's market segment ('c_mktsegment' from the 'customer' table). Otherwise, it is categorized as 'SMALL'.
+          - This categorization enables targeted marketing campaigns and customer segmentation strategies based on account value.
+          - It supports reporting and analysis related to customer profitability and risk assessment.
+        name: acct_cat
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19dfa1c9-c107-4afd-9825-f8f2bc8a3ee3
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01b7920b-1802-4968-bcfb-c2e4e82324d5
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: NUMERIC
         description: ""
@@ -198,13 +250,13 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: e73483f8-2d41-4061-b52e-0885d115d84c
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: 89c9bbcf-4b2d-401b-995c-cd1ba4196606
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 9d96afe6-abb4-4a6a-95fb-e3ca53a71e73
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 546a7e0b-77bd-4637-8070-d6db75cd651d
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: VARCHAR(1)
         description: ""
@@ -212,13 +264,13 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: ef69ac60-f79b-42d4-8080-414ab7e99a1a
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: e008a8bc-c548-4470-bad3-7682ab8abb08
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 09db2826-1d6c-4085-83e1-6c09de261a5b
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: ff9b360e-b5b1-483f-aa59-c1d66dfe7853
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: TIMESTAMP
         description: ""
@@ -226,13 +278,13 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 0bde76be-7afc-40a6-821f-81ba90551082
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: bc998edc-2e4c-4779-b702-fefd65007af5
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: e6f23f3a-abc8-4ca4-9b01-d381ba2fd709
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 783edbac-138e-4777-a9c1-7233b05fbf2b
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: TIMESTAMP
         description: ""
@@ -240,13 +292,13 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: e5b79960-0596-40c9-be7d-95bea75cf2be
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: 3e4de119-8e7d-4d1b-b9a7-9f44c0fb4ca3
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: fd60a187-3e27-4091-a730-830e7156b5f6
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: 6e9e4bc8-2770-4bb4-82e6-2b459a271a29
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: TIMESTAMP
         description: ""
@@ -254,13 +306,13 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 690ea190-a72b-4f4e-9d35-5591fad15150
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: d6ea9040-b1fb-41e1-a680-711b6099cf06
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 6fcc6003-5d8e-4a39-87c8-71782904156b
-          stepCounter: dcdf5c7d-f7f3-45ac-951c-95e3fca9f733
+          columnCounter: d9f9357b-2199-46d6-81d5-6c8bf391739c
+          stepCounter: eb70fe60-8285-41c0-8b3b-2ba31da879f5
         config: {}
         dataType: TIMESTAMP
         description: ""
@@ -268,8 +320,8 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 2d2f23c1-6c20-4889-a441-47183ca4ffd4
-                stepCounter: a655b6b3-04c7-4645-afd2-41ca837a1077
+              - columnCounter: b7525aa1-17e7-4eb5-897d-08df0268d0fd
+                stepCounter: e3b2fb45-97cd-417b-957b-f81c55951fa0
             transform: ""
     cteString: ""
     enabledColumnTestIDs: []
