@@ -15,7 +15,12 @@ operation:
   locationName: SILVER
   materializationType: table
   metadata:
-    appliedNodeTests: []
+    appliedNodeTests:
+      - continueOnFailure: true
+        description: ""
+        name: Test
+        runOrder: After
+        templateString: "{{ expect_column_to_exist('p_name') }}"
     columns:
       - appliedColumnTests: {}
         columnReference:

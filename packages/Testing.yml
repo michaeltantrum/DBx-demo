@@ -1,0 +1,10 @@
+config:
+  entities:
+    nodeTypes: {}
+  packageVariables: ""
+fileVersion: 1
+id: "@coalesce/databricks/databricks-test-utility"
+name: Testing
+packageID: "@coalesce/databricks/databricks-test-utility"
+releaseID: d04783b2-c036-4561-8aed-310ca5d3ef25
+type: Package

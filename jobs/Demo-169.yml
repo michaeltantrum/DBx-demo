@@ -1,6 +1,6 @@
 excludeSelector: ""
 fileVersion: 1
 id: "169"
-includeSelector: "+{ location: SILVER name: fct_* }+"
+includeSelector: "+{ location: GOLD name: fct_* }+ OR +{ location: GOLD name: dim_supplier1 }"
 name: Demo
 type: Job

@@ -436,27 +436,6 @@ operation:
               - columnCounter: 219b2487-7746-435f-9daa-91e17e65be4e
                 stepCounter: 63ff667a-68f9-4b55-8262-a572b48cd3ca
             transform: ""
-      - acceptedValues:
-          strictMatch: false
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 05e62ee0-5ec4-49a8-a2ff-2e9d9bf2cf0c
-          stepCounter: 016726d4-09e7-4cff-b2d6-235236cd0ccd
-        config: {}
-        dataType: STRING
-        description: |-
-          - This column categorizes customers based on their account balance, defining whether if it is greater than 5000 or not.
-          - If the account balance ('c_acctbal' from the 'customer' table) is greater than 5000, the column inherits the customer's market segment ('c_mktsegment' from the 'customer' table). Otherwise, it is categorized as 'SMALL'.
-          - This categorization enables targeted marketing campaigns and customer segmentation strategies based on account value.
-          - It supports reporting and analysis related to customer profitability and risk assessment.
-        name: acct_cat
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: dc5d4e96-b360-49b6-98b1-0dce618d1a52
-                stepCounter: 63ff667a-68f9-4b55-8262-a572b48cd3ca
-            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
